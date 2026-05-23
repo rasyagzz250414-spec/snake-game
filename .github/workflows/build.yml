@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Unzip Project
-        run: unzip snake.zip
+        run: unzip "proses game snake sendiri.zip"
       
       - name: Setup JDK 17
         uses: actions/setup-java@v4
