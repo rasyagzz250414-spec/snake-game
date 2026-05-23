@@ -1,16 +1,14 @@
 name: Build APK
-
 on:
   push:
     branches: [ main ]
- 
-   jobs:
-     build:
-       runs-on: ubuntu-latest
-    
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4  
-    - name: Unzip project
+      - name: Checkout code
+        uses: actions/checkout@v4
       run: unzip "proses game snake sendiri.zip"
     
     - name: Setup JDK 17
