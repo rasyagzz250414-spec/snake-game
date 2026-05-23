@@ -30,7 +30,7 @@ jobs:
           ./gradlew assembleDebug
       
       - name: Upload APK
-  uses: actions/upload-artifact@v4
-  with:
-    name: snake-apk
-    path: proses gam snake sendiri/app/build/outputs/apk/debug/app
+        uses: actions/upload-artifact@v4
+        with:
+          name: snake-apk
+          path: proses gam snake sendiri/app/build/outputs/apk/debug/app
