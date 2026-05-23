@@ -1,7 +1,5 @@
 name: Build APK
-on:
-  push:
-    branches: [ main ]
+on: push
 
 jobs:
   build:
@@ -9,28 +7,28 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Unzip Project
         run: unzip "proses game snake sendiri.zip"
-      
+
       - name: Setup JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
-      
+
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
-      
+
       - name: Build APK
         run: |
+          cd "proses game snake sendiri"
           ls -la
-          cd "proses gam snake sendiri"
           chmod +x gradlew
           ./gradlew assembleDebug
-      
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: snake-apk
-          path: proses gam snake sendiri/app/build/outputs/apk/debug/app
+          path: proses game snake sendiri/app/build/outputs/apk/debug/*.apk
